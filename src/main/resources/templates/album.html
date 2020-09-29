@@ -5,24 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Albums Page</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Artist</th>
-        <th>Song Count</th>
-        <th>Length</th>
-        <th>ImgUrl</th>
-    </tr>
-    <tr th:each="art : ${album}">
-        <td th:text="${art.title}">Title</td>
-        <td th:text="${art.artist}">Artist</td>
-        <td th:text="${art.songcount}">Song Count</td>
-        <td th:text="${art.length}">Length</td>
-        <td th:text="${art.imageUrl}">ImgUrl</td>
-    </tr>
-</table>
+<h1>Welcome to the albums page! Check out the info below.</h1>
+<div th:each="art : ${album}">
+        <h2 th:text="${art.title}">Title</h2>
+        <h3 th:text="'Artist : ' + ${art.artist}">Artist</h3>
+        <p th:text="'Song count : ' + ${art.songcount}">Song Count</p>
+        <p th:text="'Album length : ' + ${art.length}">Length</p>
+        <img th:text="${art.imageUrl}" alt="">ImgUrl</img>
+</div>
 </body>
 </html>

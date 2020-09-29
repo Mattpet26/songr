@@ -14,22 +14,22 @@ public class AlbumController {
         songs.add(new Album(
                 "Beebbops",
                 "the bots",
-                679,
+                67,
                 12,
-                "http://thebotsrock.com"
+                "https://en.wikipedia.org/wiki/Athlete_(band)#/media/File:AthleteBandApril2008.jpg"
         ));
         songs.add(new Album("Doggos",
                 "woofmanJ",
                 1,
-                6000,
-                "Http://Barkbois.com"
+                60,
+                "http://Barkbois.com"
         ));
         songs.add(new Album(
                 "Feeling blue",
-                "J J Jman",
+                "Jman",
                 15,
                 9,
-                "Http://Sadbois.com"
+                "http://Sadbois.com"
         ));
         mPotato.addAttribute("album", songs);
         return "album";
