@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Song Count</th>
+        <th>Length</th>
+        <th>ImgUrl</th>
+    </tr>
+    <tr th:each="art : ${album}">
+        <td th:text="${art.title}">Title</td>
+        <td th:text="${art.artist}">Artist</td>
+        <td th:text="${art.songcount}">Song Count</td>
+        <td th:text="${art.length}">Length</td>
+        <td th:text="${art.imageUrl}">ImgUrl</td>
+    </tr>
+</table>
+</body>
+</html>
