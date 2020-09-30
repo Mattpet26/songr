@@ -9,13 +9,24 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<h1>Welcome to the albums page! Check out the info below.</h1>
+<h1>Welcome to the albums page!</h1>
 <div th:each="art : ${album}">
         <h2 th:text="${art.title}">Title</h2>
         <h3 th:text="'Artist : ' + ${art.artist}">Artist</h3>
         <p th:text="'Song count : ' + ${art.songcount}">Song Count</p>
-        <p th:text="'Album length : ' + ${art.length}">Length</p>
+        <p th:text="'Album length : ' + ${art.length} + 'seconds'">Length</p>
         <img th:text="${art.imageUrl}" alt="">ImgUrl</img>
+</div>
+<div>
+    <h4>Interested in making your own album? Try below!</h4>
+    <form action="/album" method="POST">
+        Album: <input type="text" name="title">
+        Artist: <input type="text" name="artist">
+        Song count: <input type="number" name="songcount">
+        Album length: <input type="number" name="length">
+        Image url: <input  type="text" name="imageUrl">
+        <input type="submit">
+    </form>
 </div>
 </body>
 </html>

@@ -1,6 +1,25 @@
 package com.petersen.songr;
 
+// 1. Annotations of Entity
+// 2. Annotate and add an ID
+// 3. Create a default constructor
+// 4. Add jbdc url to application.properties file      -- this is like .env
+// 5. Create classNameRepository interface and extend JpaRepository
+// 6. Autowire this Repository
+// 7. In application.properties - add spring.jpa.hibernate.ddl-auto=update
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity                                     // this can live in postgres, mysql, mongo, graphql
 public class Album {
+
+    @Id                                      //id SERIAL PRIMARY KEY
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+
     String title;
     String artist;
     int songcount;
@@ -14,6 +33,8 @@ public class Album {
         this.length = length;
         this.imageUrl = imageUrl;
     }
+
+    public Album(){}
 
     public String getTitle() {
         return title;
