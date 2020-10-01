@@ -8,19 +8,20 @@ package com.petersen.songr;
 // 6. Autowire this Repository
 // 7. In application.properties - add spring.jpa.hibernate.ddl-auto=update
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity                                     // this can live in postgres, mysql, mongo, graphql
 public class Album {
 
     @Id                                      //id SERIAL PRIMARY KEY
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    public long id;
 
     String title;
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true) // mapped by is my table name
+    public List<Song> songSung = new ArrayList<Song>();
     String artist;
     int songcount;
     int length;
