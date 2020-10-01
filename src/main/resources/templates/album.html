@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Albums Page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div>
+    <h4>Interested in adding your own album?</h4>
+    <form action="/albums" method="POST">
+        Album: <input type="text" name="title">
+        Artist: <input type="text" name="artist">
+        Song count: <input type="number" name="songcount">
+        Album length: <input type="number" name="length">
+        Image url: <input  type="text" name="imageUrl">
+        <input type="submit">
+    </form>
+</div>
+
+<h1>Welcome to the albums page!</h1>
+<div th:each="art : ${album}">
+        <h2 th:text="${art.title}">Title</h2>
+
+        <h3 th:text="'Artist : ' + ${art.artist}">Artist</h3>
+
+        <p th:text="'Song count : ' + ${art.songcount}">Song Count</p>
+        <p th:text="'Album length : ' + ${art.length} + 'seconds'">Length</p>
+        <img th:text="${art.imageUrl}" alt="">ImgUrl</img>
+
+    <form th:action="'/albums/delete/' + ${art.id}" method="POST">
+        <input type="submit" value="delete album">
+    </form>
+
+    <form action="/song" method="POST">
+        <input type="hidden" name="albumId" th:value="${art.id}">
+        <input type="submit" value="add song">
+    </form>
+
+</div>
+</body>
+</html>
