@@ -36,9 +36,9 @@
         <input type="submit" value="delete album">
     </form>
 
-    <form action="/song" method="POST">
+    <form action="/singlealbum" method="GET">
         <input type="hidden" name="albumId" th:value="${art.id}">
-        <input type="submit" value="add song">
+        <input type="submit" value="album details">
     </form>
 
 </div>

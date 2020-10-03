@@ -8,7 +8,8 @@
 1. /hello: This takes the user to the hello world route
 2. /capitalize/message-here: This route capitalizes the users message entered in the route
 3. /albums: Allows the user to create new albums that display to the user
-4. /song: The user can go to song to look at all the songs within an album!
+4. /singlealbum: Allows the user to view information about a single album.
+5. /song: The user can go to song to look at all the songs within an album!
 
 ## How to Run the File
 Clone the git repo into the terminal using the command   
@@ -21,7 +22,7 @@ git clone https://github.com/mattpet26/songer.com
 
 - Now go to the web-page to view the pages
 ```
-localhost:8080/capitalize/words-to-capitalize || localhost:8080/albums | localhost:8080/ (home page)
+localhost:8080/capitalize/words-to-capitalize || localhost:8080/albums || localhost:8080/ (home page) || 
 ```
 
 ## Tests Done
