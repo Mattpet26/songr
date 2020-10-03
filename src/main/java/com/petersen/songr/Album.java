@@ -21,7 +21,7 @@ public class Album {
 
     String title;
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL, orphanRemoval = true) // mapped by is my table name
-    public List<Song> songSung = new ArrayList<Song>();
+    public List<Song> songs = new ArrayList<Song>();
     String artist;
     int songcount;
     int length;
@@ -33,6 +33,14 @@ public class Album {
         this.songcount = songcount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Album(){}

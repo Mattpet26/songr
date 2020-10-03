@@ -7,5 +7,17 @@
 <body>
 <h1>This has the list of songs from that album!</h1>
 
+<div th:each="song : ${song}">
+    <p th:text="${song.title}"></p>
+    <p th:text="${song.length}"></p>
+    <p th:text="${song.trackNumber}"></p>
+    <p th:text="'by ' + ${song.album.artist}"></p>
+
+    <form action="/albums" method="GET">
+        <input type="hidden" name="songId" th:value="${song.album.getId()}">
+        <input type="submit" value="Go back to album">
+    </form>
+</div>
+
 </body>
 </html>

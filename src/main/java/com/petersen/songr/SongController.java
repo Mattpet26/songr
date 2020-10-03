@@ -21,16 +21,20 @@ public class SongController {
     @GetMapping("/song")
     public String songAlbum(Model mPotato) {
         ArrayList<Song> songs = (ArrayList<Song>) songRepository.findAll();
-        mPotato.addAttribute("potatoes", songs);
+        mPotato.addAttribute("song", songs);
         return "song";
     }
 
     @PostMapping("/song")
-    public RedirectView addSong(long albumId){
-        Album al = albumRepository.getOne(albumId);
-        Song songs = new Song(al, "Beatbois", 4, 1);
-        songRepository.save(songs);
-
-        return new RedirectView("/song");
+    public RedirectView addSong(long albumId, String title, int length, int trackNumber) {
+        System.out.println(albumId);
+        Album album = albumRepository.getOne(albumId);
+        Song song = new Song(
+                album,
+                title,
+                length,
+                trackNumber);
+        songRepository.save(song);
+        return  new RedirectView("/song");
     }
 }
