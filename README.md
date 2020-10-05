@@ -22,8 +22,16 @@ git clone https://github.com/mattpet26/songer.com
 
 - Now go to the web-page to view the pages
 ```
-localhost:8080/capitalize/words-to-capitalize || localhost:8080/albums || localhost:8080/ (home page) || 
+localhost:8080/capitalize/words-to-capitalize || localhost:8080/ (home page)
+```
+- Users can also view/add/remove albums by the following:
+```
+localhost:8080/albums 
+```
+- The albums page will redirect users to /songs, where the user can then add or remove songs for EACH album
+```
+localhost:8080/songs
 ```
 
 ## Tests Done
-No current tests, the web page is live at localhost:8080 
+Tests call all be found wtihin src/test/java/com.petersen.songr/tests
