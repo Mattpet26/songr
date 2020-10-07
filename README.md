@@ -17,7 +17,12 @@ Clone the git repo into the terminal using the command
 git clone https://github.com/mattpet26/songer.com
 ```
 - Open IntelliJ using the correct folder 
-
+- To ensure everything will work properly, users need to make an edit to the application.properties file.
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/ (Created a database and enter the name here)
+spring.datasource.username= (Enter your username here)
+spring.datasource.password= (Enter your password here)
+```
 - To start the server and get everything running go to src/main/java/com.petersen/SongrApplication and hit play or build!
 
 - Now go to the web-page to view the pages
