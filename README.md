@@ -5,11 +5,11 @@
 ## The app also allows the user to add/view songs within an album
 
 ##Routes
-1. /hello: This takes the user to the hello world route
-2. /capitalize/message-here: This route capitalizes the users message entered in the route
-3. /albums: Allows the user to create new albums that display to the user
-4. /singlealbum: Allows the user to view information about a single album.
-5. /song: The user can go to song to look at all the songs within an album!
+1. /capitalize/message-here: This route capitalizes the users message entered in the route
+2. /albums: Allows the user to create new albums that display to the user
+3. /singlealbum: Allows the user to view information about a single album.
+4. /song: The user can go to song to look at all the songs within an album!
+5. /: Takes the user to the home page.
 
 ## How to Run the File
 Clone the git repo into the terminal using the command   
